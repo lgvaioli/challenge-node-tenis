@@ -12,7 +12,7 @@ El diseño te lo dejamos para vos :)
 * La resolución debe ser un fork de este repo (Se evalúa el uso de GIT).
 * El frontend nos gustaría verlo en React (o cualquier framework similar).
 * No uses el nombre del Grand Slam como indentificador. Si le prestas atención al excel hay otra forma :).
-* Implementá un sistema de Logs que registre tres tipos de mensajes (Error, Warning y Success) para la respuesta de nuestra API y de las peticiones que le realicemos al sheet que utilizamos.
+* Implementá un sistema de Logs que registre en base de datos tres tipos de mensajes (Error, Warning y Success) para la respuesta de nuestra API y de las peticiones que le realicemos al sheet que utilizamos.
 
 ### BONUS
 
