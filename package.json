@@ -20,6 +20,8 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongoose": "^5.10.7"
+    "googleapis": "^39.2.0",
+    "mongoose": "^5.10.7",
+    "request-ip": "^2.1.3"
   }
 }
