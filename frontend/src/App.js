@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styles from './App.module.css';
+import { GrandSlam } from './GrandSlam';
+
+const GRAND_SLAMS = [
+  { name: 'Autralian Open', id: 580 },
+  { name: 'Roland Garros', id: 520 },
+  { name: 'Wimbledon', id: 540 },
+  { name: 'US Open', id: 560 },
+];
 
 function App() {
+  const grandSlamsEl = GRAND_SLAMS.map((curr) => {
+    return (
+      <GrandSlam name={curr.name} id={curr.id} key={curr.id} />
+    );
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.AppContainer}>
+      {grandSlamsEl}
     </div>
   );
 }
