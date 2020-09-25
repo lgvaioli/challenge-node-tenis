@@ -27,6 +27,8 @@ function generate_token() {
       if (err) {
         // Token file doesn't exist, create it
         create_token_from_console(oAuth2Client);
+      } else {
+        console.log(`Token file already exists!`);
       }
     });
   });
@@ -65,6 +67,4 @@ function create_token_from_console(oAuth2Client) {
   });
 }
 
-module.exports = {
-  generate_token,
-};
+generate_token();

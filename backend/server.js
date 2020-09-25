@@ -2,8 +2,10 @@ const express = require('express');
 const app = express();
 const { getClientIp } = require('request-ip');
 const { PORT, STATUS_CODE, STATIC_DIR } = require('./config');
-const { Logger } = require('./logger');
+const { Logger } = require('./Logger');
 const logger = new Logger();
+const { AtpSheet } = require('./AtpSheet');
+const atpSheet = new AtpSheet(logger);
 
 
 // Setup body parsing
@@ -36,10 +38,22 @@ app.post('/atpstats/mostSingles', (req, res) => {
       .json({ reason: 'invalid tourneyId' });
   }
 
-  // FIXME: Implement actual behavior, maybe through an AtpSheet class.
-  return res
-    .status(STATUS_CODE.OK)
-    .json({ fixme: `implement me! Here's your tourneyId: ${tourneyId}`});
+  atpSheet
+    .getMostSinglesPlayer(tourneyId)
+    .then((playerWins) => {
+      logger.logSuccess(`Got most singles for tourneyId ${tourneyId} for ${getClientIp(req)}`);
+
+      return res
+        .status(STATUS_CODE.OK)
+        .json({ ...playerWins });
+    })
+    .catch((err) => {
+      logger.logError(`Error while trying to get most singles for tourneyId ${tourneyId} for ${getClientIp(req)}: ${err}`);
+
+      return res
+        .status(STATUS_CODE.INTERNAL_SERVER_ERROR)
+        .json({ reason: err });
+    })
 });
 
 
