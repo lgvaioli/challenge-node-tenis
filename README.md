@@ -8,10 +8,14 @@ Se asume que el usuario tiene instalado [Docker](https://www.docker.com/) y [Nod
 
 En el directorio raíz del proyecto, ejecutar `./run.sh`
 
-Este script instala y ejecuta el proyecto.
+Este script instala y ejecuta el proyecto, poniendo el servidor a escuchar por defecto en `http://localhost:3000`
 
 En la primera ejecución, la aplicación pedirá ingresar en una URL y copiar-pegar un código, para generar
 un token de acceso a la API de Google. En ejecuciones subsecuentes este paso se saltea.
+
+El deploy incluye [Mongo-Express](https://github.com/mongo-express/mongo-express), un dashboard para Mongo, con el que
+se puede ver el estado de la base de datos. La app utiliza la base de datos `admin` por defecto, y almacena los
+logs en una colección `logmessages`. Por defecto, el dashboard corre en `http://localhost:8081`, pero puede modificarse (junto a algunos otros settings) editando la variable `MONGO_EXPRESS_PORT` en el archivo `.env` y ejecutando nuevamente la app.
 
 ### Windows
 

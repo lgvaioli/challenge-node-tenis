@@ -12,14 +12,6 @@ const ATP_SPREADSHEET_COLUMN_OFFSET = {
   SINGLES_WINNER_NAME: 15,
 }
 
-const TOURNEY_ID = {
-  AUSTRALIAN_OPEN: 580,
-  ROLAND_GARROS: 520,
-  WIMBLEDON: 540,
-  US_OPEN: 560,
-};
-
-
 // We couple the AtpSheet representation to the Google auth mechanism just for
 // simplicity's sake. In a real app these two concerns should be separated.
 class AtpSheet {
