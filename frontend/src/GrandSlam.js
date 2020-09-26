@@ -25,7 +25,7 @@ export function GrandSlam(props) {
       const mostRecentYearId = `mostRecentYear${props.id}`;
 
       setMostSinglesPlayer(
-        <div>
+        <div className={styles.PlayerInfo}>
           <h2 onClick={handleClickOnPlayer}>{mostSinglesEntry.player}</h2>
           <div className={styles.YearBox}><h3 id={mostRecentYearId}>{mostRecentYear}</h3></div>
         </div>
@@ -38,7 +38,7 @@ export function GrandSlam(props) {
 
   return (
     <div className={styles.GrandSlamContainer}>
-      <h1>{props.name} Most Singles Winner</h1>
+      <h1>{props.name}</h1>
       {mostSinglesPlayer}
     </div>
   );

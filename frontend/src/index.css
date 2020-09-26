@@ -3,3 +3,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color: #2C4770;
+  font-family: 'Roboto', sans-serif;
+}

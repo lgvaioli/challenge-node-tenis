@@ -19,4 +19,12 @@ export class AtpStatsApi {
       })
     });
   }
+
+  // Mock getMostSingles, to more easily develop/test the frontend. The jarring mock_ naming
+  // convention is intentionally annoying.
+  static mock_getMostSingles(tourneyId) {
+    return new Promise((resolve) => {
+      resolve({ player: 'John Doe', wins: [1984, 1996, 2012] });
+    });
+  }
 }

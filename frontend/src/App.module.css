@@ -1,3 +1,6 @@
-.AppContainer {
-  background-color: blue;
+.AppContainer > h1 {
+  text-align: center;
+  color: aliceblue;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }

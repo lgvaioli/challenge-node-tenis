@@ -18,6 +18,7 @@ function App() {
 
   return (
     <div className={styles.AppContainer}>
+      <h1>Grand Slam Most Single Titles</h1>
       {grandSlamsEl}
     </div>
   );
